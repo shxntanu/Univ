@@ -7,6 +7,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        fontFamily: 'IBM Plex Mono',
         useMaterial3: true,
         primaryColor: Colors.black,
       ),
@@ -31,14 +32,20 @@ class HomeScaffold extends StatelessWidget {
             children: [
               Expanded(
                 child: Container(
-                    color: Colors.black,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(
+                            'assets/pexels-mathias-reding-4392537.jpg'),
+                        fit: BoxFit.fill,
+                      ),
+                    ),
                     child: const Center(
                         child: Text(
                       "Univ",
                       style: TextStyle(
                         fontSize: 40,
                         color: Colors.white,
-                        fontFamily: 'RobotoMono',
+                        fontFamily: 'IBM Plex Mono',
                       ),
                     )),
                   ),
@@ -69,7 +76,11 @@ class HomeScaffold extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {},
-                        child: const Text('LOGIN', style: style1),
+                        child: const Text('LOGIN', style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'IBM Plex Mono',
+                          color: Colors.black,
+                        )),
                       ),
                     ),
                   ],
@@ -96,11 +107,11 @@ class HomeScaffold extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ))),
                             onPressed: () {},
-                            child: Text("REGISTER".toUpperCase(),
+                            child: Text("REGISTER",
                                 style: const TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: 'RobotoMono',
+                                  fontFamily: 'IBM Plex Mono',
                                 )))),
                   ],
                 )
